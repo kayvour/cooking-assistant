@@ -1,0 +1,111 @@
+/* Focus Mode overrides */
+
+/* Dim background with overlay */
+.focus-mode-page {
+  min-height: 90vh;
+  background: rgba(217, 164, 65, 0.9); /* mustard warm overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  font-family: 'Georgia', serif;
+  color: #5B3A29;
+}
+
+/* Wrapper box */
+.focus-mode-wrapper {
+  background: #FFF7E7;
+  padding: 2.8rem 3rem;
+  border-radius: 18px;
+  box-shadow: 6px 6px 18px rgba(91, 58, 41, 0.3);
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+  user-select: none;
+}
+
+/* Heading */
+.focus-mode-wrapper h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  font-size: 2.8rem;
+  margin-bottom: 1.8rem;
+  color: #9C6644;
+  letter-spacing: 0.06em;
+}
+
+/* Steps text */
+#focus-step {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  min-height: 90px;
+  color: #5B3A29;
+  font-style: italic;
+}
+
+/* Control buttons */
+.focus-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.focus-controls button {
+  background-color: #D9A441;
+  color: #5B3A29;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px rgba(91, 58, 41, 0.25);
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  user-select: none;
+}
+
+.focus-controls button:hover {
+  background-color: #E6CBA8;
+}
+
+/* Exit button special */
+#exitBtn {
+  background-color: #B03A2E;
+  color: #FFF7E7;
+  font-weight: 700;
+  box-shadow: 3px 3px 8px rgba(176, 58, 46, 0.6);
+}
+
+#exitBtn:hover {
+  background-color: #8B2A21;
+}
+
+/* Voice control button */
+#voiceControlBtn {
+  margin-top: 2rem;
+  background-color: #8B5E3C;
+  color: #FFF7E7;
+  border-radius: 12px;
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 4px 4px 10px rgba(139, 94, 60, 0.7);
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#voiceControlBtn:hover {
+  background-color: #A67C4F;
+}
+
+/* Voice status */
+#voiceStatus {
+  display: inline-block;
+  margin-left: 1rem;
+  font-style: italic;
+  color: #5B3A29;
+  font-weight: 600;
+}

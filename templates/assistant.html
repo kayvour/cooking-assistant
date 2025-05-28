@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cooking Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="{{ url_for('home') }}" class="nav-logo">🍳 Cooking Helper</a>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('assistant') }}" class="active">Assistant</a></li>
+        <li><a href="{{ url_for('community') }}">Community</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="assistant-section">
+    <div class="assistant-box">
+      <h1>Virtual Cooking Assistant</h1>
+      <p>Paste a recipe URL below to get started.</p>
+
+      <form method="POST" class="url-form" novalidate>
+        <input
+          type="url"
+          name="url"
+          placeholder="Paste recipe URL here..."
+          required
+          autocomplete="off"
+          value="{{ url or '' }}"
+        />
+        <button type="submit">🔍 Extract Recipe</button>
+      </form>
+
+      {% if error %}
+        <div class="error-message">{{ error }}</div>
+      {% endif %}
+
+      {% if title %}
+        <article class="recipe-output">
+          <h2>{{ title }}</h2>
+
+          <section class="recipe-section">
+            <h3>🧂 Ingredients</h3>
+            <ul>
+              {% for ingredient in ingredients %}
+                <li>{{ ingredient }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+
+          <section class="recipe-section">
+            <h3>👨‍🍳 Instructions</h3>
+            <ul>
+              {% for step in instructions %}
+                <li>{{ step }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+
+          <div class="focus-mode-toggle">
+  <a href="{{ url_for('focus_mode') }}">
+    <button class="focus-btn">🎯 Enter Focus Mode</button>
+  </a>
+</div>
+        </article>
+      {% endif %}
+    </div>
+  </main>
+
+</body>
+</html>

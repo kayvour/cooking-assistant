@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Focus Mode</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/focus_mode.css') }}" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="{{ url_for('home') }}" class="nav-logo">🍳 Cooking Helper</a>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('assistant') }}">Assistant</a></li>
+        <li><a href="{{ url_for('community') }}">Community</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="focus-mode-page">
+    <div class="focus-mode-wrapper">
+      <h1>Focus Mode: {{ title }}</h1>
+      <section id="focusModeSteps">
+        <p id="focus-step"></p>
+
+        <div class="focus-controls">
+          <button id="prevBtn">⬅️ Previous</button>
+          <button id="repeatBtn">🔁 Repeat</button>
+          <button id="nextBtn">➡️ Next</button>
+          <a href="{{ url_for('assistant') }}"><button id="exitBtn">❌ Exit</button></a>
+        </div>
+
+        <!-- Voice Control Button & Status -->
+        <button id="voiceControlBtn" type="button">🎤 Start Voice Control</button>
+        <span id="voiceStatus"></span>
+      </section>
+    </div>
+  </main>
+
+  <script type="application/json" id="recipe-data">
+    {{ instructions | tojson | safe }}
+  </script>
+  <script src="{{ url_for('static', filename='js/focus_mode.js') }}"></script>
+
+</body>
+</html>

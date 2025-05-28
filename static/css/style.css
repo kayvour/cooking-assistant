@@ -1,0 +1,315 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+/* Background for whole page */
+body {
+  background: url('../images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #5B3A29; /* warm brown */
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 241, 224, 0.9); /* soft cream overlay */
+  box-shadow: 0 4px 6px rgba(91, 58, 41, 0.3);
+  padding: 0.7rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-weight: 600;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  color: #8B5E3C; /* muted orange-brown */
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #8B5E3C;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #E6CBA8; /* light tan */
+  color: #5B3A29;
+}
+
+/* Buttons */
+button,
+.btn-primary {
+  background-color: #D9A441; /* retro mustard yellow */
+  color: #5B3A29;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 2px 2px 5px rgba(91, 58, 41, 0.3);
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button:hover,
+.btn-primary:hover {
+  background-color: #E6CBA8;
+}
+
+/* Focus mode button */
+.focus-btn {
+  background: #f7a072;        /* Soft coral pastel */
+  color: #4a2c2a;             /* Deep warm brown */
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.6rem 1.6rem;
+  border: 3px solid #e76f51; /* Slightly darker coral border */
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(231, 111, 81, 0.4);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.focus-btn:hover,
+.focus-btn:focus {
+  background: #e76f51; /* Darker coral on hover */
+  box-shadow: 0 8px 15px rgba(231, 111, 81, 0.7);
+  transform: translateY(-3px);
+  color: #fff;
+  outline: none;
+}
+
+.focus-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(231, 111, 81, 0.5);
+}
+
+
+/* Links inside buttons */
+a > button {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Main container styling */
+main {
+  max-width: 900px;
+  margin: 2rem auto 3rem;
+  background: rgba(255, 241, 224, 0.85);
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  box-shadow: 6px 6px 15px rgba(91, 58, 41, 0.15);
+}
+
+/* Assistant Section */
+.assistant-section {
+  padding-top: 2rem;
+}
+
+.assistant-box h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  font-size: 2.8rem;
+  margin-bottom: 0.3rem;
+  color: #9C6644;
+  letter-spacing: 0.07em;
+}
+
+.assistant-box p {
+  font-style: italic;
+  color: #7A4F2B;
+  margin-bottom: 1.8rem;
+  font-size: 1.1rem;
+}
+
+/* URL form */
+.url-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.url-form input[type="url"] {
+  flex-grow: 1;
+  padding: 0.6rem 1rem;
+  border: 2px solid #D9A441;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #5B3A29;
+  font-family: 'Georgia', serif;
+  transition: border-color 0.3s ease;
+}
+
+.url-form input[type="url"]:focus {
+  outline: none;
+  border-color: #E6CBA8;
+  background-color: #FFF7E7;
+}
+
+.url-form button {
+  flex-shrink: 0;
+}
+
+/* Error message */
+.error-message {
+  color: #B03A2E;
+  background-color: #FBE9E7;
+  border: 1.5px solid #B03A2E;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+/* Recipe Output */
+.recipe-output h2 {
+  font-family: 'Courier New', Courier, monospace;
+  color: #A3673A;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #D9A441;
+  padding-bottom: 0.3rem;
+  letter-spacing: 0.05em;
+}
+
+.recipe-section {
+  margin-bottom: 1.6rem;
+}
+
+.recipe-section h3 {
+  font-weight: 700;
+  color: #7A4F2B;
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+.recipe-section ul {
+  list-style: square inside;
+  color: #5B3A29;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.recipe-section ul li {
+  padding-left: 0.25rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Community Section */
+.community-section {
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.community-box {
+  background: rgba(255, 241, 224, 0.9);
+  border-radius: 15px;
+  padding: 2.5rem 3rem;
+  max-width: 700px;
+  box-shadow: 5px 5px 14px rgba(91, 58, 41, 0.15);
+  text-align: center;
+  color: #5B3A29;
+  font-family: 'Georgia', serif;
+}
+
+.community-box h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  font-size: 2.6rem;
+  margin-bottom: 0.6rem;
+  color: #9C6644;
+}
+
+.community-box p {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #7A4F2B;
+}
+
+.coming-soon-banner {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1rem;
+  background-color: #D9A441;
+  color: #5B3A29;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 2px 2px 6px rgba(91, 58, 41, 0.3);
+}
+
+/* Hero Section on home.html */
+.hero {
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 241, 224, 0.85);
+  margin: 2rem;
+  border-radius: 20px;
+  box-shadow: 7px 7px 20px rgba(91, 58, 41, 0.2);
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  font-size: 3rem;
+  margin-bottom: 0.6rem;
+  color: #A3673A;
+  letter-spacing: 0.07em;
+}
+
+.hero-content h1 span {
+  color: #D9A441;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 1.4rem;
+  font-style: italic;
+  color: #7A4F2B;
+}
+
+.btn-primary {
+  font-size: 1.2rem;
+  padding: 0.7rem 2.2rem;
+}
+
+/* Focus mode toggle container */
+.focus-mode-toggle {
+  margin-top: 2rem;
+  text-align: center;
+}

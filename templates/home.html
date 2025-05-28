@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - Cooking Helper</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="{{ url_for('home') }}" class="nav-logo">🍳 Cooking Helper</a>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+        <li><a href="{{ url_for('assistant') }}">Assistant</a></li>
+        <li><a href="{{ url_for('community') }}">Community</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to <span>Cooking Helper</span></h1>
+      <p>Your cozy corner for stress-free, joyful cooking.</p>
+      <a href="{{ url_for('assistant') }}" class="btn-primary">🍲 Get Started</a>
+    </div>
+  </section>
+</body>
+</html>
