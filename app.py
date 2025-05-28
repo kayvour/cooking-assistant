@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
 
 @app.route('/assistant', methods=['GET', 'POST'])
