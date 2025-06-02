@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+import os
+from flask import Flask, request, redirect, url_for, session, send_file, render_template
 from recipe_scrapers import scrape_me
 
 app = Flask(__name__)
@@ -6,7 +7,7 @@ app.secret_key = 'supersecretkey'
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_file('index.html')
 
 @app.route('/assistant', methods=['GET', 'POST'])
 def assistant():
@@ -22,17 +23,13 @@ def assistant():
             scraper = scrape_me(url)
             title = scraper.title()
             ingredients = scraper.ingredients()
-
             raw_instructions = scraper.instructions()
             if raw_instructions and isinstance(raw_instructions, str):
                 instructions = [step.strip() for step in raw_instructions.split('\n') if step.strip()]
             else:
                 instructions = []
-
-            # Store for Focus Mode
             session['focus_title'] = title
             session['focus_instructions'] = instructions
-
         except Exception:
             error = "Sorry, couldn't fetch recipe from the URL."
 
@@ -64,4 +61,5 @@ def community():
     return render_template('community.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
