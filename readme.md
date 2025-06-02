@@ -2,57 +2,78 @@
 
 A Flask-based web app that scrapes recipes from URLs and guides you hands-free through cooking with voice-controlled, step-by-step instructions.
 
----
-
-## Overview
-
-- Scrapes recipes from user-provided URLs using the [`recipe_scrapers`](https://pypi.org/project/recipe-scrapers/) library.
-- Provides a detailed view with ingredients and step-by-step instructions.
-- Includes a Focus Mode for guided cooking steps with voice control and speech synthesis.
-- Community page planned for future user engagement features.
+🌐 [Live Demo](https://cooking-assistant-phi.vercel.app/)
 
 ---
 
-## Features
+## 📝 What It Does
 
-- Input any recipe URL to fetch recipe details: title, ingredients, and instructions.
-- Focus Mode presents instructions one step at a time with voice narration.
-- Voice commands supported in Focus Mode: **"next"**, **"previous"**, **"repeat"**, and **"exit"**.
-- Responsive UI with custom CSS and JavaScript for smooth interaction.
-- Utilizes Web Speech API for speech synthesis and recognition.
+Cooking Assistant helps you cook smarter by:
 
----
-
-## Folder Structure
-
-- `app.py` — Flask backend application  
-- `requirements.txt` — Python dependencies  
-- `static/css/style.css` — Stylesheet  
-- `static/js/script.js` — JavaScript for recipe extraction UI  
-- `static/js/focus_mode.js` — JavaScript handling Focus Mode and voice commands  
-- `static/images/bg.jpg` — Background image asset  
-- `templates/` — HTML templates (`home.html`, `assistant.html`, `focus_mode.html`, `community.html`)
+- Scraping recipes from user-provided URLs using [`recipe_scrapers`](https://pypi.org/project/recipe-scrapers/)
+- Displaying clear, structured ingredient lists and instructions
+- Offering a **Focus Mode** with voice navigation so you can cook without touching your screen
+- Using the **Web Speech API** for speech recognition and text-to-speech
+- Planning future features like a **community page** for recipe sharing and interaction
 
 ---
 
-## Installation & Running
+## 🚀 Features
+
+- Enter any recipe URL to automatically extract:
+  - Title  
+  - Ingredients  
+  - Step-by-step instructions
+- Focus Mode:
+  - Narrates one instruction at a time
+  - Responds to voice commands:  
+    - **"next"** – go to the next step  
+    - **"previous"** – go back one step  
+    - **"repeat"** – repeat current step  
+    - **"exit"** – leave Focus Mode
+- Clean, responsive interface powered by custom CSS and JavaScript
+- Runs entirely in the browser with no extensions required
+
+---
+
+## 📁 Project Structure
+
+```
+cooking-assistant/
+├── app.py                 # Flask backend
+├── requirements.txt       # Python dependencies
+├── static/
+│   ├── css/style.css         # Custom styles
+│   ├── js/script.js          # Handles recipe scraping UI
+│   ├── js/focus_mode.js      # Voice commands and narration
+│   └── images/bg.jpg         # Background image
+└── templates/
+    ├── home.html
+    ├── assistant.html
+    ├── focus_mode.html
+    └── community.html
+```
+
+
+---
+
+## ⚙️ Getting Started
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/kayvour/cooking-assistant.git
-   cd cooking-assistant
+git clone https://github.com/kayvour/cooking-assistant.git
+cd cooking-assistant
 
-2. Install dependencies:
+3. Install dependencies:
 pip install -r requirements.txt
 
-3. Run the application:
+4. Run the application:
 python app.py
 
-4. Open your browser and go to:
+5. Open your browser and go to:
 http://127.0.0.1:5000/
 
-## Usage
+## 🧑‍🍳 How to Use
 
 - Paste a recipe URL into the input field on the homepage.
 - Click **Start Cooking** to fetch and view the recipe details.
@@ -64,30 +85,29 @@ http://127.0.0.1:5000/
   - **"exit"** — leave Focus Mode  
 - For best results, use Chrome and grant microphone access when prompted.
 
-## Notes
+## 📌 Notes
 
 - Speech recognition works best in Chrome due to Web Speech API support.
 - Microphone permissions are required for voice commands.
 - If recipe scraping fails, an error message will be shown.
 - Focus Mode requires modern browsers with Web Speech API.
 
-## Future Improvements
+## 🔮 Future Improvements
 
 - Add user accounts and recipe saving functionality.
 - Expand community features for recipe sharing and feedback.
 - Enhance voice recognition robustness and add multi-language support.
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! If you have suggestions, improvements, or bug fixes, please fork the repository and submit a pull request. For major changes, feel free to open an issue to discuss first.
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact
+## 📬 Contact
 
-For inquiries or feedback, open an issue in the repository or reach out to the maintainer.
-
+For questions, feedback, or collaboration, open an issue or reach out via the repo.
 
 Cooking Assistant aims to make cooking more accessible and enjoyable by integrating voice technology into your kitchen experience — whether you’re a beginner or a seasoned chef!
