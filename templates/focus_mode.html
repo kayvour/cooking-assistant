@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Focus Mode</title>
-  <link rel="stylesheet" href="/static/css/style.css" />
-  <link rel="stylesheet" href="/static/css/focus_mode.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/focus_mode.css') }}" />
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="/" class="nav-logo">🍳 Cooking Helper</a>
+      <a href="{{ url_for('index') }}" class="nav-logo">🍳 Cooking Helper</a>
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/assistant">Assistant</a></li>
-        <li><a href="/community">Community</a></li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('assistant') }}">Assistant</a></li>
+        <li><a href="{{ url_for('community') }}">Community</a></li>
       </ul>
     </div>
   </nav>
@@ -31,7 +31,7 @@
           <button id="prevBtn">⬅️ Previous</button>
           <button id="repeatBtn">🔁 Repeat</button>
           <button id="nextBtn">➡️ Next</button>
-          <a href="/assistant"><button id="exitBtn">❌ Exit</button></a>
+          <a href="{{ url_for('assistant') }}"><button id="exitBtn">❌ Exit</button></a>
         </div>
 
         <!-- Voice Control Button & Status -->
@@ -44,7 +44,7 @@
   <script type="application/json" id="recipe-data">
     {{ instructions | tojson | safe }}
   </script>
-  <script src="/static/js/focus_mode.js"></script>
+  <script src="{{ url_for('static', filename='js/focus_mode.js') }}"></script>
 
 </body>
 </html>

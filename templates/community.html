@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Community Recipes</title>
-  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="/" class="nav-logo">🍳 Cooking Helper</a>
+      <a href="{{ url_for('index') }}" class="nav-logo">🍳 Cooking Helper</a>
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/assistant">Assistant</a></li>
-        <li><a href="/community" class="active">Community</a></li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('assistant') }}">Assistant</a></li>
+        <li><a href="{{ url_for('community') }}" class="active">Community</a></li>
       </ul>
     </div>
   </nav>
@@ -23,7 +23,7 @@
   <section class="community-section">
     <div class="community-box">
       <h1>Community Recipes</h1>
-      <p>We’re stirring something special... 👨‍🍳</p>
+      <p>We're stirring something special... 👨‍🍳</p>
       <p>Our community recipe hub is almost ready — soon you'll be able to discover and share your favorite dishes with fellow food lovers.</p>
       <div class="coming-soon-banner">Coming Soon 🚧</div>
     </div>

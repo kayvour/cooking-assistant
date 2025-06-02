@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cooking Assistant</title>
-  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="/" class="nav-logo">🍳 Cooking Helper</a>
+      <a href="{{ url_for('index') }}" class="nav-logo">🍳 Cooking Helper</a>
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/assistant" class="active">Assistant</a></li>
-        <li><a href="/community">Community</a></li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('assistant') }}" class="active">Assistant</a></li>
+        <li><a href="{{ url_for('community') }}">Community</a></li>
       </ul>
     </div>
   </nav>
@@ -65,7 +65,7 @@
           </section>
 
           <div class="focus-mode-toggle">
-            <a href="/focus-mode">
+            <a href="{{ url_for('focus_mode') }}">
               <button class="focus-btn">🎯 Enter Focus Mode</button>
             </a>
           </div>
