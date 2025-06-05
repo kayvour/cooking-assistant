@@ -1,27 +1,62 @@
 /* Focus Mode overrides */
 
+/* Focus mode variables */
+:root {
+  --focus-bg-overlay: rgba(217, 164, 65, 0.9);
+  --focus-wrapper-bg: #FFF7E7;
+  --focus-text-color: #5B3A29;
+  --focus-heading-color: #9C6644;
+  --focus-button-bg: #D9A441;
+  --focus-button-hover: #E6CBA8;
+  --focus-exit-bg: #B03A2E;
+  --focus-exit-hover: #8B2A21;
+  --focus-voice-bg: #8B5E3C;
+  --focus-voice-hover: #A67C4F;
+  --focus-shadow: rgba(91, 58, 41, 0.3);
+}
+
+[data-theme="dark"] {
+  --focus-bg-overlay: rgba(40, 40, 40, 0.95);
+  --focus-wrapper-bg: #2a2a2a;
+  --focus-text-color: #e0e0e0;
+  --focus-heading-color: #ffa500;
+  --focus-button-bg: #ffa500;
+  --focus-button-hover: #ff8c00;
+  --focus-exit-bg: #dc3545;
+  --focus-exit-hover: #c82333;
+  --focus-voice-bg: #6c757d;
+  --focus-voice-hover: #5a6268;
+  --focus-shadow: rgba(0, 0, 0, 0.5);
+}
+
 /* Dim background with overlay */
 .focus-mode-page {
   min-height: 90vh;
-  background: rgba(217, 164, 65, 0.9); /* mustard warm overlay */
+  background: var(--focus-bg-overlay);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 3rem 1rem;
   font-family: 'Georgia', serif;
-  color: #5B3A29;
+  color: var(--focus-text-color);
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .focus-mode-page {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.95) 100%);
 }
 
 /* Wrapper box */
 .focus-mode-wrapper {
-  background: #FFF7E7;
+  background: var(--focus-wrapper-bg);
   padding: 2.8rem 3rem;
   border-radius: 18px;
-  box-shadow: 6px 6px 18px rgba(91, 58, 41, 0.3);
+  box-shadow: 6px 6px 18px var(--focus-shadow);
   max-width: 650px;
   width: 100%;
   text-align: center;
   user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Heading */
@@ -30,8 +65,9 @@
   font-weight: 900;
   font-size: 2.8rem;
   margin-bottom: 1.8rem;
-  color: #9C6644;
+  color: var(--focus-heading-color);
   letter-spacing: 0.06em;
+  transition: color 0.3s ease;
 }
 
 /* Steps text */
@@ -39,8 +75,9 @@
   font-size: 1.3rem;
   margin-bottom: 2rem;
   min-height: 90px;
-  color: #5B3A29;
+  color: var(--focus-text-color);
   font-style: italic;
+  transition: color 0.3s ease;
 }
 
 /* Control buttons */
@@ -52,39 +89,56 @@
 }
 
 .focus-controls button {
-  background-color: #D9A441;
-  color: #5B3A29;
+  background-color: var(--focus-button-bg);
+  color: var(--focus-text-color);
   font-weight: 700;
   border-radius: 10px;
   padding: 0.6rem 1.4rem;
   border: none;
   cursor: pointer;
-  box-shadow: 3px 3px 8px rgba(91, 58, 41, 0.25);
-  transition: background-color 0.3s ease;
+  box-shadow: 3px 3px 8px var(--focus-shadow);
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 1rem;
   user-select: none;
 }
 
 .focus-controls button:hover {
-  background-color: #E6CBA8;
+  background-color: var(--focus-button-hover);
+}
+
+[data-theme="dark"] .focus-controls button {
+  color: #000;
+}
+
+[data-theme="dark"] .focus-controls button:hover {
+  color: #000;
 }
 
 /* Exit button special */
 #exitBtn {
-  background-color: #B03A2E;
+  background-color: var(--focus-exit-bg);
   color: #FFF7E7;
   font-weight: 700;
   box-shadow: 3px 3px 8px rgba(176, 58, 46, 0.6);
 }
 
 #exitBtn:hover {
-  background-color: #8B2A21;
+  background-color: var(--focus-exit-hover);
+  color: #FFF7E7;
+}
+
+[data-theme="dark"] #exitBtn {
+  color: #fff;
+}
+
+[data-theme="dark"] #exitBtn:hover {
+  color: #fff;
 }
 
 /* Voice control button */
 #voiceControlBtn {
   margin-top: 2rem;
-  background-color: #8B5E3C;
+  background-color: var(--focus-voice-bg);
   color: #FFF7E7;
   border-radius: 12px;
   padding: 0.8rem 2rem;
@@ -98,7 +152,16 @@
 }
 
 #voiceControlBtn:hover {
-  background-color: #A67C4F;
+  background-color: var(--focus-voice-hover);
+}
+
+[data-theme="dark"] #voiceControlBtn {
+  color: #fff;
+  box-shadow: 4px 4px 10px rgba(108, 117, 125, 0.7);
+}
+
+[data-theme="dark"] #voiceControlBtn:hover {
+  color: #fff;
 }
 
 /* Voice status */
@@ -106,6 +169,7 @@
   display: inline-block;
   margin-left: 1rem;
   font-style: italic;
-  color: #5B3A29;
+  color: var(--focus-text-color);
   font-weight: 600;
+  transition: color 0.3s ease;
 }
