@@ -40,18 +40,30 @@ Cooking Assistant helps you cook smarter by:
 
 ```
 cooking-assistant/
-├── app.py                 # Flask backend
-├── requirements.txt       # Python dependencies
-├── static/
-│   ├── css/style.css         # Custom styles
-│   ├── js/script.js          # Handles recipe scraping UI
-│   ├── js/focus_mode.js      # Voice commands and narration
-│   └── images/bg.jpg         # Background image
-└── templates/
-    ├── home.html
-    ├── assistant.html
-    ├── focus_mode.html
-    └── community.html
+├── app.py                        # Flask backend
+├── requirements.txt              # Python dependencies
+├── vercel.json                   # Vercel deployment configuration
+├── changelog.md                  # Project changelog
+├── LICENSE                       # License info
+├── readme.md                     # Project documentation
+├── index.html                    # Landing page (static)
+├── .gitattributes                # Git configuration
+
+├── static/                       # Static files (served directly)
+│   ├── css/
+│   │   ├── focus_mode.css        # Styles for focus mode
+│   │   └── style.css             # General styles
+│   ├── images/
+│   │   └── bg.jpg                # Background image
+│   └── js/
+│       ├── focus_mode.js         # JS for focus mode narration & controls
+│       └── script.js             # General interaction scripts
+
+├── templates/                    # Flask Jinja2 templates
+│   ├── assistant.html            # Assistant interface page
+│   ├── community.html           # Community recipe page
+│   └── focus_mode.html          # Voice/narration mode interface
+
 ```
 
 
