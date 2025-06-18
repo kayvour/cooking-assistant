@@ -1,5 +1,5 @@
 /* ==========================================================================
-   OPTIMIZED FOCUS MODE STYLES
+   OPTIMIZED FOCUS MODE STYLES WITH TIMER SYSTEM
    ========================================================================== */
 
 /* Focus Mode CSS Custom Properties */
@@ -21,6 +21,29 @@
   --focus-shadow: rgba(91, 58, 41, 0.3);
   --focus-exit-shadow: rgba(176, 58, 46, 0.6);
   --focus-voice-shadow: rgba(139, 94, 60, 0.7);
+  
+  /* Timer Colors */
+  --timer-bg: #F8F4E6;
+  --timer-border: #D9A441;
+  --timer-text: #5B3A29;
+  --timer-header-bg: #E6CBA8;
+  --timer-progress-bg: #F0E6D2;
+  --timer-progress-fill: #D9A441;
+  --timer-warning-bg: #FFF3CD;
+  --timer-warning-border: #FFEAA7;
+  --timer-warning-progress: #FFB347;
+  --timer-critical-bg: #F8D7DA;
+  --timer-critical-border: #F5C6CB;
+  --timer-critical-progress: #DC3545;
+  --timer-completed-bg: #D4EDDA;
+  --timer-completed-border: #C3E6CB;
+  --timer-completed-progress: #28A745;
+  --timer-suggestion-bg: #E8F4FD;
+  --timer-suggestion-border: #B3D4FC;
+  --timer-suggestion-text: #1B4F72;
+  --notification-bg: #28A745;
+  --notification-text: #FFFFFF;
+  --notification-shadow: rgba(40, 167, 69, 0.3);
   
   /* Focus Mode Spacing */
   --focus-padding-sm: 0.6rem;
@@ -57,6 +80,29 @@
   --focus-shadow: rgba(0, 0, 0, 0.5);
   --focus-exit-shadow: rgba(220, 53, 69, 0.6);
   --focus-voice-shadow: rgba(108, 117, 125, 0.7);
+  
+  /* Dark Timer Colors */
+  --timer-bg: #3a3a3a;
+  --timer-border: #ffa500;
+  --timer-text: #e0e0e0;
+  --timer-header-bg: #4a4a4a;
+  --timer-progress-bg: #555555;
+  --timer-progress-fill: #ffa500;
+  --timer-warning-bg: #4a3d00;
+  --timer-warning-border: #665200;
+  --timer-warning-progress: #ffcc00;
+  --timer-critical-bg: #4a1a1a;
+  --timer-critical-border: #6b2626;
+  --timer-critical-progress: #ff4757;
+  --timer-completed-bg: #1a4a2e;
+  --timer-completed-border: #266b3a;
+  --timer-completed-progress: #2ed573;
+  --timer-suggestion-bg: #1a2942;
+  --timer-suggestion-border: #2c5282;
+  --timer-suggestion-text: #a3d5ff;
+  --notification-bg: #2ed573;
+  --notification-text: #000000;
+  --notification-shadow: rgba(46, 213, 115, 0.3);
 }
 
 /* ==========================================================================
@@ -130,6 +176,270 @@
   color: var(--focus-text-color);
   font-weight: 600;
   transition: color var(--focus-transition);
+}
+
+/* ==========================================================================
+   TIMER SYSTEM STYLES
+   ========================================================================== */
+
+/* Timer Section */
+.timer-section {
+  margin: var(--focus-padding-lg) 0;
+  padding: var(--focus-padding-md);
+  background: var(--timer-bg);
+  border-radius: 12px;
+  border: 2px solid var(--timer-border);
+  transition: all var(--focus-transition);
+}
+
+/* Timer Suggestion */
+.timer-suggestion {
+  background: var(--timer-suggestion-bg);
+  color: var(--timer-suggestion-text);
+  padding: var(--focus-padding-sm) var(--focus-padding-md);
+  border-radius: 8px;
+  border: 1px solid var(--timer-suggestion-border);
+  margin-bottom: var(--focus-padding-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all var(--focus-transition);
+}
+
+/* Individual Timer Container */
+.timer-container {
+  background: var(--timer-bg);
+  border: 2px solid var(--timer-border);
+  border-radius: 10px;
+  padding: var(--focus-padding-md);
+  margin-bottom: var(--focus-padding-md);
+  transition: all var(--focus-transition);
+  box-shadow: 0 2px 8px var(--focus-shadow);
+}
+
+.timer-container:last-child {
+  margin-bottom: 0;
+}
+
+/* Timer Header */
+.timer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--timer-header-bg);
+  padding: var(--focus-padding-sm) var(--focus-padding-md);
+  border-radius: 6px;
+  margin-bottom: var(--focus-padding-md);
+}
+
+.timer-label {
+  font-weight: 700;
+  color: var(--timer-text);
+  font-size: 1rem;
+}
+
+.timer-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--timer-text);
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: background-color var(--focus-transition);
+}
+
+.timer-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Timer Display */
+.timer-display {
+  text-align: center;
+  margin-bottom: var(--focus-padding-md);
+}
+
+.timer-time {
+  font-family: 'Courier New', monospace;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--timer-text);
+  display: block;
+  margin-bottom: var(--focus-padding-sm);
+  text-shadow: 1px 1px 2px var(--focus-shadow);
+}
+
+/* Timer Progress Bar */
+.timer-progress {
+  width: 100%;
+  height: 8px;
+  background: var(--timer-progress-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.timer-progress-bar {
+  height: 100%;
+  background: var(--timer-progress-fill);
+  border-radius: 4px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer Controls */
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.timer-btn {
+  background: var(--focus-button-bg);
+  color: var(--focus-button-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--focus-transition);
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px var(--focus-shadow);
+}
+
+.timer-btn:hover {
+  background: var(--focus-button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px var(--focus-shadow);
+}
+
+.timer-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px var(--focus-shadow);
+}
+
+/* Timer States */
+.timer-warning {
+  background: var(--timer-warning-bg);
+  border-color: var(--timer-warning-border);
+  animation: timerPulse 1s ease-in-out infinite alternate;
+}
+
+.timer-warning .timer-progress-bar {
+  background: var(--timer-warning-progress);
+}
+
+.timer-critical {
+  background: var(--timer-critical-bg);
+  border-color: var(--timer-critical-border);
+  animation: timerUrgent 0.5s ease-in-out infinite alternate;
+}
+
+.timer-critical .timer-progress-bar {
+  background: var(--timer-critical-progress);
+}
+
+.timer-completed {
+  background: var(--timer-completed-bg);
+  border-color: var(--timer-completed-border);
+  animation: timerSuccess 2s ease-in-out;
+}
+
+.timer-completed .timer-progress-bar {
+  background: var(--timer-completed-progress);
+}
+
+/* Timer Animations */
+@keyframes timerPulse {
+  from {
+    box-shadow: 0 2px 8px var(--focus-shadow);
+  }
+  to {
+    box-shadow: 0 4px 16px var(--timer-warning-border);
+  }
+}
+
+@keyframes timerUrgent {
+  from {
+    box-shadow: 0 2px 8px var(--focus-shadow);
+    transform: scale(1);
+  }
+  to {
+    box-shadow: 0 6px 20px var(--timer-critical-border);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes timerSuccess {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px var(--focus-shadow);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px var(--timer-completed-border);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px var(--focus-shadow);
+  }
+}
+
+/* Timer Notifications */
+.timer-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--notification-bg);
+  color: var(--notification-text);
+  padding: var(--focus-padding-md);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--notification-shadow);
+  z-index: 1000;
+  animation: slideInRight 0.3s ease-out;
+  max-width: 300px;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.notification-icon {
+  font-size: 1.5rem;
+}
+
+.notification-text {
+  flex: 1;
+  font-weight: 600;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: var(--notification-text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: background-color var(--focus-transition);
+}
+
+.notification-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* ==========================================================================
@@ -297,6 +607,35 @@
     display: block;
     margin: 0.5rem 0 0 0;
   }
+  
+  /* Timer responsive adjustments */
+  .timer-section {
+    padding: var(--focus-padding-sm);
+  }
+  
+  .timer-container {
+    padding: var(--focus-padding-sm);
+  }
+  
+  .timer-time {
+    font-size: 2rem;
+  }
+  
+  .timer-controls {
+    gap: 0.5rem;
+  }
+  
+  .timer-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .timer-notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -316,6 +655,29 @@
   #voiceControlBtn {
     font-size: 1rem;
   }
+  
+  .timer-time {
+    font-size: 1.8rem;
+  }
+  
+  .timer-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .timer-label {
+    font-size: 0.9rem;
+  }
+  
+  .timer-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .timer-btn {
+    width: 100%;
+  }
 }
 
 /* ==========================================================================
@@ -331,6 +693,14 @@
   .focus-controls button {
     border: 1px solid var(--focus-text-color);
   }
+  
+  .timer-container {
+    border-width: 3px;
+  }
+  
+  .timer-btn {
+    border: 1px solid var(--timer-text);
+  }
 }
 
 /* Reduced motion support */
@@ -343,6 +713,16 @@
     animation: none;
   }
   
+  .timer-warning,
+  .timer-critical,
+  .timer-completed {
+    animation: none;
+  }
+  
+  .timer-notification {
+    animation: none;
+  }
+  
   * {
     transition: none !important;
   }
@@ -350,7 +730,32 @@
 
 /* Focus indicators for keyboard navigation */
 .focus-controls button:focus-visible,
-#voiceControlBtn:focus-visible {
+#voiceControlBtn:focus-visible,
+.timer-btn:focus-visible,
+.timer-close:focus-visible,
+.notification-close:focus-visible {
   outline: 3px solid var(--focus-heading-color);
   outline-offset: 2px;
+}
+
+/* Screen reader support */
+.timer-container[aria-label],
+.timer-notification[aria-label] {
+  position: relative;
+}
+
+.timer-container:focus-within {
+  outline: 2px solid var(--focus-heading-color);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .timer-notification {
+    display: none;
+  }
+  
+  .timer-container {
+    break-inside: avoid;
+  }
 }
