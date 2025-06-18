@@ -31,7 +31,7 @@ Cooking Assistant helps you cook smarter by:
     - **"previous"** – go back one step  
     - **"repeat"** – repeat current step  
     - **"exit"** – leave Focus Mode
-- Automatic Timer from recipes: When a recipe step includes durations (e.g. “bake for 20 minutes”):
+- Automatic Timer from recipes: When a recipe step includes durations (e.g. “Bake for 20 minutes”):
    - Timer is automatically detected
    - Countdown is displayed on-screen
    - Alerts you when the time is up
@@ -113,6 +113,10 @@ http://127.0.0.1:5000/
 - Add user accounts and recipe saving functionality.
 - Expand community features for recipe sharing and feedback.
 - Enhance voice recognition robustness and add multi-language support.
+- Add mobile support
+- Enhance navigation and bookmark specific steps
+- Ingredient scaling with automatic measurement conversion
+- Add ability to search previously viewed recipes
 
 ## 🤝 Contributing
 
