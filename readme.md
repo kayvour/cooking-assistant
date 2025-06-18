@@ -31,6 +31,10 @@ Cooking Assistant helps you cook smarter by:
     - **"previous"** – go back one step  
     - **"repeat"** – repeat current step  
     - **"exit"** – leave Focus Mode
+- Automatic Timer from recipes: When a recipe step includes durations (e.g. “bake for 20 minutes”):
+   - Timer is automatically detected
+   - Countdown is displayed on-screen
+   - Alerts you when the time is up
 - Clean, responsive interface powered by custom CSS and JavaScript
 - Runs entirely in the browser with no extensions required
 
@@ -102,7 +106,7 @@ http://127.0.0.1:5000/
 - Speech recognition works best in Chrome due to Web Speech API support.
 - Microphone permissions are required for voice commands.
 - If recipe scraping fails, an error message will be shown.
-- Focus Mode requires modern browsers with Web Speech API.
+- Focus Mode requires modern browsers with Web Speech API and JavaScript enabled.
 
 ## 🔮 Future Improvements
 
