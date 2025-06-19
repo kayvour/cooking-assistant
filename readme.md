@@ -2,7 +2,10 @@
 
 A Flask-based web app that scrapes recipes from URLs and guides you hands-free through cooking with voice-controlled, step-by-step instructions.
 
+![image](https://github.com/user-attachments/assets/a7f5116b-03c1-466e-8127-6ada6a3f4879)
+
 🌐 [Live Demo](https://cooking-assistant-phi.vercel.app/)
+📖 [View Changelog](./changelog.md)
 
 ---
 
@@ -100,6 +103,14 @@ http://127.0.0.1:5000/
   - **"repeat"** — repeat the current step  
   - **"exit"** — leave Focus Mode  
 - For best results, use Chrome and grant microphone access when prompted.
+
+## 🧰 Tech Stack
+- 🐍 Python 3.10
+- ⚗️ Flask Web Framework
+- 📄 recipe-scrapers (for parsing recipe URLs)
+- 🗣️ Web Speech API (speech recognition + TTS)
+- 🎨 HTML, CSS, JavaScript
+- ☁️ Vercel (for deployment)
 
 ## 📌 Notes
 
