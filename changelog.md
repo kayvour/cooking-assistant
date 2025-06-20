@@ -6,7 +6,7 @@ This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.
 
 ---
 
-## [1.2.0] – 2025-06-18
+## [1.1.0] – 2025-06-18
 
 ### Added
 - **Automatic Timer Detection**  
@@ -21,7 +21,7 @@ This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.
 
 ---
 
-## [1.1.0] – 2025-06-05
+## [1.0.1] – 2025-06-05
 
 ### Added
 - Dark mode support across all pages.
