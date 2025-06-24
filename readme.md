@@ -1,5 +1,19 @@
 # Cooking Assistant 
 
+<p align="center">
+  <img src="https://img.shields.io/badge/release-coming%20soon-blueviolet?style=flat-square">
+  <a href="https://github.com/kayvour/cooking-assistant/commits"><img src="https://img.shields.io/github/last-commit/kayvour/cooking-assistant?style=flat-square"></a>
+  <a href="https://github.com/kayvour/cooking-assistant/issues"><img src="https://img.shields.io/github/issues/kayvour/cooking-assistant?style=flat-square"></a>
+  <a href="https://github.com/kayvour/cooking-assistant/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kayvour/cooking-assistant?style=flat-square"></a>
+  <img src="https://img.shields.io/badge/html-5-e34f26?style=flat-square&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/css-3-1572b6?style=flat-square&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/javascript-es6-f7df1e?style=flat-square&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/status-in%20development-orange?style=flat-square">
+</p>
+
+---
+📄 Full changelog → [`CHANGELOG.md`](./CHANGELOG.md)
+
 A Flask-based web app that scrapes recipes from URLs and guides you hands-free through cooking with voice-controlled, step-by-step instructions.
 
 ![image](https://github.com/user-attachments/assets/a7f5116b-03c1-466e-8127-6ada6a3f4879)
