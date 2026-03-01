@@ -91,6 +91,22 @@ body {
   background: #1a1a1a;
 }
 
+[data-theme="dark"] main {
+  background: #2a2a2a;
+}
+
+[data-theme="dark"] .hero {
+  background: #2a2a2a;
+}
+
+[data-theme="dark"] .navbar {
+  background: rgba(30, 30, 30, 0.95);
+}
+
+[data-theme="dark"] .community-box {
+  background: #2a2a2a;
+}
+
 /* ==========================================================================
    Layout Components
    ========================================================================== */
