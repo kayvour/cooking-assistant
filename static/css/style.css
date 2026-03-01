@@ -84,26 +84,26 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   background: #f5f5f0;
-  transition: color var(--transition-normal);
+  transition: color var(--transition-normal), background var(--transition-normal);
 }
 
-[data-theme="dark"] body {
+body[data-theme="dark"] {
   background: #1a1a1a;
 }
 
-[data-theme="dark"] main {
+body[data-theme="dark"] main {
   background: #2a2a2a;
 }
 
-[data-theme="dark"] .hero {
+body[data-theme="dark"] .hero {
   background: #2a2a2a;
 }
 
-[data-theme="dark"] .navbar {
+body[data-theme="dark"] .navbar {
   background: rgba(30, 30, 30, 0.95);
 }
 
-[data-theme="dark"] .community-box {
+body[data-theme="dark"] .community-box {
   background: #2a2a2a;
 }
 
