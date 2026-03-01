@@ -1,29 +1,28 @@
+
 // Dark mode toggle function
 function toggleTheme() {
   const body = document.body;
   const icon = document.getElementById('theme-icon');
-
-  // Check current theme
   const currentTheme = body.getAttribute('data-theme');
-  
+
   if (currentTheme === 'dark') {
-    // Switch to light mode
     body.removeAttribute('data-theme');
-    icon.textContent = '🌙'; // moon icon for light mode
+    icon.textContent = '🌙';
+    localStorage.setItem('theme', 'light');  // ← persist
   } else {
-    // Switch to dark mode
     body.setAttribute('data-theme', 'dark');
-    icon.textContent = '☀️'; // sun icon for dark mode
+    icon.textContent = '☀️';
+    localStorage.setItem('theme', 'dark');   // ← persist
   }
 }
 
 // Initialize theme on page load
 document.addEventListener('DOMContentLoaded', function() {
   const icon = document.getElementById('theme-icon');
-  const currentTheme = document.body.getAttribute('data-theme');
-  
-  // Set initial icon based on current theme
-  if (currentTheme === 'dark') {
+  const savedTheme = localStorage.getItem('theme');  // ← restore
+
+  if (savedTheme === 'dark') {
+    document.body.setAttribute('data-theme', 'dark');
     icon.textContent = '☀️';
   } else {
     icon.textContent = '🌙';
